@@ -8,7 +8,11 @@
 
 #storing all the passwords from passwords/mysql.json file to the "passwords" variable
 
-#
+
+package 'mysql-server' do
+  action :install
+end
+
 mysql_client 'default' do
     action :create
   end

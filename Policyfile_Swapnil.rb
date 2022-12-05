@@ -13,4 +13,4 @@ default_source :supermarket
 run_list 'lamp::default'
 
 # Specify a custom source for a single cookbook:
-cookbook 'lamp', '~> 0.1.1', git: 'git@github.com:swapnilshirsath0711/lamp.git', branch: 'main'
+cookbook 'lamp', '~> 0.1.0', git: 'git@github.com:swapnilshirsath0711/lamp.git', branch: 'main'

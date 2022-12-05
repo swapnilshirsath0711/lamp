@@ -23,9 +23,9 @@ mysql2_chef_gem 'default' do
 end
 
 mysql_connection_info = {
-  host: '127.0.0.1'
-  username: 'root'
-  password: node['lamp']['database']['root_password']
+  'host'=> '127.0.0.1',
+  'username'=> 'root',
+  'password'=> node['lamp']['database']['root_password']
 }
 
 mysql_database node['lamp']['database']['dbname'] do
@@ -37,7 +37,7 @@ mysql_database_user node['lamp']['databse']['admin_username'] do
   connection mysql_connection_info
   password node['lamp']['database']['admin_password']
   database_name node['lamp']['database']['dbname']
-  host: '127.0.0.1'
+  host '127.0.0.1'  
   action [:create, :grant]
 end
 

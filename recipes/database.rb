@@ -10,7 +10,7 @@
 
 
 package 'mysql-server' do
-  action :uninstall
+  action :remove
 end
 
 # mysql_service 'default' do

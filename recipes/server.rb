@@ -13,7 +13,7 @@
 
   file '/var/www/html/index.html' do
     action :create
-	  content "<h1>Hello, Folks!</h1><br>"
+	  content "<h1>Hello, Welcome to Chef Tutorials!</h1><br>"
   end 
   
   service 'httpd' do

@@ -11,18 +11,19 @@
 	  action :install
   end
 
-  # file '/var/www/html/index.html' do
-	#   content "<h1>Hello, Folks!</h1><br>"
-  # end 
+  file '/var/www/html/index.html' do
+    action :create
+	  content "<h1>Hello, Folks!</h1><br>"
+  end 
   
   service 'httpd' do
     action [:start, :enable]
   end
   
-  template node['lamp']['index_path'] do
-    source 'index.erb'
-  end
+  # template node['lamp']['index_path'] do
+  #   source 'index.erb'
+  # end
 
-  httpd_config 'default' do
-	  source 'default.conf.erb'
-  end
+  # httpd_config 'default' do
+	#   source 'default.conf.erb'
+  # end

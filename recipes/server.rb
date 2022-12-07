@@ -20,10 +20,10 @@
     action [:start, :enable]
   end
   
-  # template node['lamp']['index_path'] do
-  #   source 'index.erb'
-  # end
+  template node['lamp']['index_path'] do
+    source 'index.erb'
+  end
 
-  # httpd_config 'default' do
-	#   source 'default.conf.erb'
-  # end
+  httpd_config 'default' do
+	  source 'default.conf.erb'
+  end

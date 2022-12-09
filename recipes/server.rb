@@ -11,7 +11,8 @@
 	  action :install
   end
 
-  file '/var/www/html/index.html' do
+  # file '/var/www/html/index.html' do
+  file node['lamp']['index_path'] do
     action :create
 	  content "<h1>Hello</h1><br>
     <h2>Welcome to Chef Tutorials!</h2><br>

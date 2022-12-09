@@ -5,10 +5,10 @@ license 'All Rights Reserved'
 description 'Installs/Configures lamp'
 long_description 'Installs/Configures lamp'
 version '0.1.0'
-chef_version '>= 13.0'
+chef_version '>= 12.1' if respond_to?(:chef_version)
 
+depends 'httpd', '~> 0.4'
 
-# depends 'httpd', '~> 0.4'
 # depends 'mysql', '~> 8.0'
 # depends 'database', '~> 6.1'
 # depends 'mysql2_chef_gem', '~> 2.0'

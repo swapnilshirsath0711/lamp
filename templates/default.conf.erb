@@ -1,13 +1,13 @@
 <VirtualHost *:80>
   ServerName <%= node['hostname'] %>
-  ServerAdmin 'ops@example.com'
+  ServerAdmin 'swapnil.shirsath@coupa.com'
 
-  DocumentRoot <%= node['lamp']['web']['document_root'] %>
+  DocumentRoot <%= node['lamp']['server']['document_root'] %>
   <Directory "/">
           Options FollowSymLinks
           AllowOverride None
   </Directory>
-  <Directory <%= node['lamp']['web']['document_root'] %> >
+  <Directory <%= node['lamp']['server']['document_root'] %> >
           Options Indexes FollowSymLinks MultiViews
           AllowOverride None
           Require all granted
@@ -24,3 +24,4 @@
   AddType application/x-httpd-php-source .phps
   DirectoryIndex index.php index.html
 </VirtualHost>
+

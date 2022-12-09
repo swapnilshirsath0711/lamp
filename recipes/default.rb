@@ -7,4 +7,5 @@
 #
 
 include_recipe 'lamp::server'
-# include_recipe 'lamp::database'
+include_recipe 'lamp::database'
+include_recipe 'lamp::php'

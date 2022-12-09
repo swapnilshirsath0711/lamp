@@ -9,13 +9,13 @@
 #storing all the passwords from passwords/mysql.json file to the "passwords" variable
 
 
-# package 'mysql-server' do
-#   action :install
-# end
+package 'mysql-server' do
+  action :install
+end
 
-# service 'mysqld' do
-#   action [:start, :enable]
-# end
+service 'mysqld' do
+  action [:start, :enable]
+end
 
 # mysql_service 'default' do
 #    initial_root_password node['lamp']['database']['root_password']
@@ -49,32 +49,3 @@
 #   host '127.0.0.1'  
 #   action [:create, :grant]
 # end
-
-
-node["lamp"]["sites"]["site1"] do
-  root_directory = node['lamp']['server']['document_root']
-  template "/etc/httpd/mayur/conf.d/#{site}.conf" do
-    source "default.conf.erb"
-    mode "0644"
-    variables(
-      :root_directory => root_directory,
-      :port => port_data["port"],
-      :site => site
-    )
-    notifies :restart, "service[httpd]"
-    end
-  directory root_directory do 
-    mode "0755"
-    recursive true
-  end
-
-  template "#{root_directory}/index.html" do
-    source "app.html.erb"
-    mode "0755"
-    variables(
-      :site => site1,
-      :port => port_data["port"]
-    )
-  
-  end
-end

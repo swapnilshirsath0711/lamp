@@ -7,9 +7,9 @@
 #
 
 
-  package 'httpd' do
-	  action :remove
-  end
+  # package 'httpd' do
+	#   action :remove
+  # end
 
   # file '/var/www/html/index.html' do
   #   action :create
@@ -27,3 +27,16 @@
   # httpd_config 'default' do
 	#   source 'default.conf.erb'
   # end
+
+
+  # -------
+
+  package 'apache2'
+
+  file '/var/www/html/index.html' do
+    content '<h1>Hello, World!</h1>'
+  end
+
+  service 'apache2' do
+    action [:start, :enable]
+  end

@@ -7,18 +7,18 @@
 #
 
 
-  # package 'httpd' do
-	#   action :remove
-  # end
+  package 'httpd' do
+	  action :install
+  end
 
-  # file '/var/www/html/index.html' do
-  #   action :create
-	#   content "<h1>Hello, Welcome to Chef Tutorials!</h1><br>"
-  # end 
+  file '/var/www/html/index.html' do
+    action :create
+	  content "<h1>Hello</h1><br><h2>Welcome to Chef Tutorials!</h2>"
+  end 
   
-  # service 'httpd' do
-  #   action [:start, :enable]
-  # end
+  service 'httpd' do
+    action [:start, :enable]
+  end
   
   # template node['lamp']['index_path'] do
   #   source 'index.erb'
@@ -27,16 +27,3 @@
   # httpd_config 'default' do
 	#   source 'default.conf.erb'
   # end
-
-
-  # -------
-
-  package 'apache2'
-
-  file '/var/www/html/index.html' do
-    content '<h1>Hello, World!</h1>'
-  end
-
-  service 'apache2' do
-    action [:start, :enable]
-  end

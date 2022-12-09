@@ -27,6 +27,7 @@
 
   template node['lamp']['index_path'] do
     source 'index.erb'
+    variables ({ipaddress: node['ipaddress']})
   end
   
   service 'httpd' do

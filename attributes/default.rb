@@ -8,4 +8,4 @@ default['lamp']['database']['admin_username'] = 'dbadmin'
 default['lamp']['database']['root_password'] = 'root123'
 default['lamp']['database']['admin_password'] = 'root123'
 
-default["lamp"]["sites"]["site1"] = {"port" => 3001}
+# default["lamp"]["sites"]["site1"] = {"port" => 3001}

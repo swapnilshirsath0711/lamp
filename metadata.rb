@@ -12,7 +12,7 @@ version '0.1.0'
 # depends 'mysql2_chef_gem', '~> 2.0'
 
 # ------ TRIAL -------
-depends 'mysql', '~> 8.5.1'
+# depends 'mysql', '~> 8.5.1'
 # ------ TRIAL -------
 
 # The `issues_url` points to the location where issues for this cookbook are

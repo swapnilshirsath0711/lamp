@@ -8,4 +8,8 @@
 package 'php' do
     action :install
   end
-  
+
+package 'php5-mysql' do
+  action :install
+  notifies :restart, 'service[httpd]'
+end

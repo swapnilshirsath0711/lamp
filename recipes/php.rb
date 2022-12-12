@@ -11,5 +11,5 @@ package 'php' do
 
 package 'php5-mysql' do
   action :install
-  notifies :restart, 'service[httpd]'
+  # notifies :restart, 'service[httpd]'
 end

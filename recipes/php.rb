@@ -9,6 +9,3 @@ package 'php' do
     action :install
   end
   
-service 'php' do
-  action [:start, :enable]
-end

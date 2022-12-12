@@ -17,10 +17,10 @@ service 'mysqld' do
   action [:start, :enable]
 end
 
-mysql_service 'default' do
-   initial_root_password node['lamp']['database']['root_password']
-   action [:create, :start]
- end
+# mysql_service 'default' do
+#    initial_root_password node['lamp']['database']['root_password']
+#    action [:create, :start]
+#  end
 
 # mysql_client 'default' do
 #     action :create

@@ -58,7 +58,7 @@ mysql_client 'default' do
   action :create
 end
 mysql_service 'default' do
-  version '5.5'
+  version '8.5.1'
   bind_address '0.0.0.0'
   port '3306'
   data_dir '/data'

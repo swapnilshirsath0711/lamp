@@ -45,6 +45,11 @@ package 'php' do
   action :install
 end
 
+package 'php5-mysql' do
+  action :install
+  notifies :restart, 'service[httpd]'
+end
+
 # # commenting all above code and using directory resource
 # # setting up httpd configuration. directory "document_root" has html page (index.html) and configuration files for httpd
 

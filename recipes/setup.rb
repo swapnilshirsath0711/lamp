@@ -35,10 +35,10 @@
   
   mysql_connection_info = {
     'host'=> '10.1.1.210',
-    'username'=> 'swapnil.shirsath',
+    'username'=> 'root',
     'password'=> node['lamp']['database']['root_password']
   }
-  
+
 package 'mysql-server' do
   action :install
 end

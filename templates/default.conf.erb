@@ -1,6 +1,6 @@
 Listen 80
 <VirtualHost *:80>
-  DocumentRoot <%= node['lamp']['server']['document_root'] %>
+  DocumentRoot <%= node['lamp']['setup']['document_root'] %>
   
   ServerName <%= node['hostname'] %>
   ServerAdmin 'swapnil.shirsath@coupa.com'
@@ -9,7 +9,7 @@ Listen 80
           Options FollowSymLinks
           AllowOverride None
   </Directory>
-  <Directory <%= node['lamp']['server']['document_root'] %> >
+  <Directory <%= node['lamp']['setup']['document_root'] %> >
           Options Indexes FollowSymLinks MultiViews
           AllowOverride None
           Require all granted

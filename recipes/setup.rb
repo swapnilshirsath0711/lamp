@@ -1,6 +1,6 @@
 #
 # Cookbook:: lamp
-# Recipe:: server
+# Recipe:: setup
 #
 # Copyright:: 2022, The Authors, All Rights Reserved.
 
@@ -31,11 +31,24 @@
     action [:start, :enable]
   end
 
+# install, start and enable mysql
+package 'mysql-server' do
+  action :install
+end
+
+service 'mysqld' do
+  action [:start, :enable]
+end
+
+# install php
+package 'php' do
+  action :install
+end
 
 # # commenting all above code and using directory resource
 # # setting up httpd configuration. directory "document_root" has html page (index.html) and configuration files for httpd
 
-# directory node['lamp']['server']['document_root'] do
+# directory node['lamp']['setup']['document_root'] do
 #   recursive true
 # end
 
@@ -58,3 +71,49 @@
 # # subscribes --> will receive the notification from other resource
 
 # # subscribes :restart, 'httpd_config[default]' --> will receive notification when there is any change in 'httpd_config[default]'
+
+
+
+
+
+
+
+
+
+#storing all the passwords from passwords/mysql.json file to the "passwords" variable
+
+
+# mysql_service 'default' do
+#    initial_root_password node['lamp']['database']['root_password']
+#    action [:create, :start]
+#  end
+
+# mysql_client 'default' do
+#     action :create
+#   end
+
+
+# mysql2_chef_gem 'default' do
+#   action :install
+# end
+
+# mysql_connection_info = {
+#   'host'=> '127.0.0.1',
+#   'username'=> 'root',
+#   'password'=> node['lamp']['database']['root_password']
+# }
+
+# mysql_database node['lamp']['database']['dbname'] do
+#   connection mysql_connection_info
+#   action :create
+# end
+
+# mysql_database_user node['lamp']['databse']['admin_username'] do
+#   connection mysql_connection_info
+#   password node['lamp']['database']['admin_password']
+#   database_name node['lamp']['database']['dbname']
+#   host '127.0.0.1'  
+#   action [:create, :grant]
+# end
+
+

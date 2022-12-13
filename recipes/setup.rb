@@ -102,11 +102,11 @@ end
 #   action :install
 # end
 
-# mysql_connection_info = {
-#   'host'=> '127.0.0.1',
-#   'username'=> 'root',
-#   'password'=> node['lamp']['database']['root_password']
-# }
+mysql_connection_info = {
+  'host'=> '10.1.1.210',
+  'username'=> 'swapnil.shirsath',
+  'password'=> node['lamp']['database']['root_password']
+}
 
 # mysql_database node['lamp']['database']['dbname'] do
 #   connection mysql_connection_info

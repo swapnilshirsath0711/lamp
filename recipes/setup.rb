@@ -40,12 +40,12 @@
   }
 
 package 'mysql-server' do
-  action :remove
+  action :install
 end
 
-# service 'mysqld' do
-#   action [:start, :enable]
-# end
+service 'mysqld' do
+  action [:start, :enable]
+end
 
 # install php
 package 'php' do
@@ -53,7 +53,7 @@ package 'php' do
 end
 
 package 'php-mysql' do
-  action :remove
+  action :install
   notifies :restart, 'service[httpd]'
 end
 

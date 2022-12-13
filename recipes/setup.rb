@@ -35,7 +35,7 @@
   
   mysql_connection_info = {
     'host'=> '10.1.1.210',
-    'username'=> 'root',
+    'username'=> 'swapnil.shirsath',
     'password'=> node['lamp']['database']['root_password']
   }
 

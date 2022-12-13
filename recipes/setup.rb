@@ -45,7 +45,7 @@ package 'php' do
   action :install
 end
 
-package 'php7.0-mysql' do
+package 'php-mysql' do
   action :install
   notifies :restart, 'service[httpd]'
 end

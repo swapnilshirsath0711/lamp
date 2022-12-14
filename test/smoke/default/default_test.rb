@@ -3,7 +3,7 @@
 # The InSpec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
+  unless os.windows?
     # This is an example test, replace with your own test.
     describe user('root') do
       it { should exist }

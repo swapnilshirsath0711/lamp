@@ -5,12 +5,12 @@
 
 unless os.windows?
     # This is an example test, replace with your own test.
-    describe user('root')
+    describe user('root') do
       it { should exist }
     end
   end
   
   # This is an example test, replace it with your own test.
-  describe port(80)
+  describe port(80) do
     it { should be_listening }
   end

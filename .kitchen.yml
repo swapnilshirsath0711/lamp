@@ -1,6 +1,6 @@
 ---
 driver:
-  name: vagrant
+  name: ec2
 
 provisioner:
   name: chef_zero
@@ -12,7 +12,7 @@ verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-14.04
+  - name: amazon2
 
 suites:
   - name: default

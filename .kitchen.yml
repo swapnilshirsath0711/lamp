@@ -1,6 +1,10 @@
 ---
 driver:
-  name: ec2
+  name: docker
+  provision_command: curl -L https://www.chef.io/chef/install.sh | bash
+
+transport:
+  name: docker
 
 provisioner:
   name: chef_zero

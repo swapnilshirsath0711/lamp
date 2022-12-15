@@ -11,7 +11,7 @@ default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
 run_list 'lamp::default'
-named_run_list 'setup_build_server', 'lamp::setup_build_server'
+# named_run_list 'setup_build_server', 'lamp::setup_build_server'
 
 # Specify a custom source for a single cookbook:
 cookbook 'lamp', '~> 0.1.0', git: 'git@github.com:swapnilshirsath0711/lamp.git', branch: 'main'

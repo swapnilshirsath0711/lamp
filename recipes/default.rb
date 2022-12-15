@@ -6,4 +6,4 @@
 #
 
 include_recipe 'lamp::setup'
-include_recipe 'lamp::setup_build_server'
+# include_recipe 'lamp::setup_build_server'

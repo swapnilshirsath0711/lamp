@@ -1,13 +1,11 @@
 ---
 driver:
-  name: docker
-  provision_command: curl -L https://www.chef.io/chef/install.sh | bash
-
-transport:
-  name: docker
+  name: ec2
 
 provisioner:
   name: chef_zero
+  always_update_cookbooks: true
+  require_chef_omnibus: 14.3.37
   data_bags_path: ../data_bags/
 
 verifier:

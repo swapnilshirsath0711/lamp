@@ -4,7 +4,8 @@
 #
 # Copyright (c) 2022 The Authors, All Rights Reserved.
 
-require 'spec_helper'
+# require 'spec_helper'
+require 'rspec'
 
 describe 'lamp::default' do
   context 'When all attributes are default, on an unspecified platform' do
@@ -14,7 +15,7 @@ describe 'lamp::default' do
     end
 
     it 'converges successfully' do
-      expect { chef_run }.to_not raise_error
+      expect { chef_run }.to raise_error
     end
   end
 end

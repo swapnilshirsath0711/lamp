@@ -17,9 +17,9 @@ require 'serverspec'
   end
 
   describe file('/var/www/default/public_html/index.php') do
-    it { should exist }
-    it { should be_owned_by 'root' }
-    its(:content) {should match '<!DOCTYPE html>' }
+    it { should_not exist }
+    # it { should be_owned_by 'root' }
+    # its(:content) {should match '<!DOCTYPE html>' }
   end
 
   describe command('curl localhost') do

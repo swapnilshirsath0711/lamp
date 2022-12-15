@@ -26,16 +26,6 @@ end
   end
 end
 
-# Create Jenkins workspace directory
-directory '/mnt/ephemeral/jenkins' do
-  owner 'deploy'
-  group 'rundeck'
-  mode '0774'
-  action :create
-  recursive true
-end
-
-
 # Required to sign rpm packages (devscript dependency)
 yum_package 'rpm-sign' do
   action :install

@@ -4,7 +4,7 @@
 # found at http://inspec.io/docs/reference/resources/
 require 'os'
 
-  unless os.windows?
+  unless windows?
     describe user('root') do
       it { should exist }
     end

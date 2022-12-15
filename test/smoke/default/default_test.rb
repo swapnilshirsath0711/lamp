@@ -2,6 +2,7 @@
 
 # The InSpec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
+require 'os'
 
   unless os.windows?
     describe user('root') do

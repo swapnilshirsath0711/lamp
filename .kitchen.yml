@@ -12,6 +12,10 @@ verifier:
 
 platforms:
   - name: aws-base-al2
+    driver:
+      image_search:
+        owner-id: '899991151204'
+        name: COUPA_BASE_AL2_es6.1.p2_hvm_EBS
 
 suites:
   - name: default

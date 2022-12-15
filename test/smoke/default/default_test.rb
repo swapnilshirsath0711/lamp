@@ -3,6 +3,7 @@
 # The InSpec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 require 'os'
+require 'serverspec'
 
   unless OS.windows?
     describe user('root') do
@@ -10,10 +11,10 @@ require 'os'
     end
   end
   
-  # describe port(80) do
-  #   it { should be_listening }
-  #   its(:protocols) { should include 'tcp' }
-  # end
+  describe port(80) do
+    it { should be_listening }
+    its(:protocols) { should include 'tcp' }
+  end
 
   describe file('/var/www/default/public_html/index.php') do
     it { should exist }
@@ -22,5 +23,5 @@ require 'os'
   end
 
   describe command('curl localhost') do
-    its(:stdout) { should match 'swapnil' }
+    its(:stdout) { should match '<h1>Hello, Folks!</h1>' }
   end

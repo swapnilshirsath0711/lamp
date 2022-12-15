@@ -41,8 +41,18 @@ yum_package 'rpm-sign' do
   action :install
 end
 
-build_server_databag = encrypted_data_bag_item('test_kitchen', 'build_server')
-
+build_server_databag = {
+  "id": "build_server",
+  "chef_workstation_gems": {
+    "bundler": "2.1.4",
+    "cookstyle": "",
+    "danger": "8.6.1"
+  },
+  "build_server_packages": {
+    "nodejs": ""
+  },
+  "passenger_key": "e42303f5b710f2801cf438a25f02d68ab5abb65ee43a680104068433624e0949"
+}
 # Install gems in chef-workstation ruby, fetch list from databag test_kitchen/build_server
 chef_workstation_gems = build_server_databag['chef_workstation_gems'] || {}
 

@@ -25,3 +25,10 @@ suites:
       inspec_tests:
         - test/smoke/default
     attributes:
+    coupa-base:
+      data_bag: coupa_dev
+      deployment: dev2099
+      serverdomain: coupadev.com
+      nodename: dev2099base4
+      role: coupa_base
+      launcher: test-kitchen

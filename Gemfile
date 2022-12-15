@@ -3,4 +3,4 @@ source 'https://rubygems.org'
 
 
 
-git 'git@github.com:rdp/os.git', branch: 'master'
+gem 'os', git 'git@github.com:rdp/os.git', branch: 'master'

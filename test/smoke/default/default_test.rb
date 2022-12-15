@@ -4,11 +4,11 @@
 # found at http://inspec.io/docs/reference/resources/
 require 'os'
 
-  # unless OS.windows?
-  #   describe user('root') do
-  #     it { should exist }
-  #   end
-  # end
+  unless OS.windows?
+    describe user('root') do
+      it { should exist }
+    end
+  end
   
   # describe port(80) do
   #   it { should be_listening }

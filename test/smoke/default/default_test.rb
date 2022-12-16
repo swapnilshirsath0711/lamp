@@ -12,7 +12,7 @@ require 'serverspec'
   end
   
   describe port(80) do
-    it { should be_listening }
+    it { should be_listening '80' }
   end
 
   describe port(80) do

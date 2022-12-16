@@ -4,6 +4,7 @@
 #
 # Copyright (c) 2022 The Authors, All Rights Reserved.
 
+require 'chefspec'
 require 'spec_helper'
 require 'rspec'
 
@@ -15,7 +16,7 @@ describe 'lamp::default' do
     end
 
     it 'converges successfully' do
-      expect { chef_run }.to_not raise_error
+      expect { chef_run }.not_to raise_error
     end
   end
 end

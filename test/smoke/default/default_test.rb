@@ -5,15 +5,19 @@
 require 'os'
 require 'serverspec'
 
-  unless OS.windows?
-    describe user('root') do
-      it { should exist }
-    end
+  # unless OS.windows?
+  #   describe user('root') do
+  #     it { should exist }
+  #   end
+  # end
+
+  describe user('root') do
+    it { should exist }
   end
   
   describe port(80) do
     # it { should be_listening.on('0.0.0.0').with('tcp') }
-    it { should be_listening }
+    # it { should be_listening }
     its(:protocols) { should include 'tcp' }
   end
 

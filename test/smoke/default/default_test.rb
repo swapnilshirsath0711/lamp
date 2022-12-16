@@ -13,6 +13,9 @@ require 'serverspec'
   
   describe port(80) do
     it { should be_listening }
+  end
+
+  describe port(80) do
     its(:protocols) { should include 'tcp' }
   end
 

@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2022 The Authors, All Rights Reserved.
 
-require 'spec_helper'
+# require 'spec_helper'
 require 'rspec'
 
 describe Lamp::Default do

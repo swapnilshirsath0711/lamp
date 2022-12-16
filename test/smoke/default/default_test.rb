@@ -12,7 +12,7 @@ require 'serverspec'
   end
   
   describe port(80) do
-    it { should be_listening.on('0.0.0.0').with('tcp' }
+    it { should be_listening.on('0.0.0.0').with('tcp') }
     its(:protocols) { should include 'tcp' }
 
   end

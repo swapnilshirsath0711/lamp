@@ -11,16 +11,11 @@ require 'serverspec'
     end
   end
   
-  # describe port(80) do
-  #   it { should be_listening.on('0.0.0.0').with('tcp') }
-  #   its(:protocols) { should include 'tcp' }
-  # end
-
   describe port(80) do
+    # it { should be_listening.on('0.0.0.0').with('tcp') }
     it { should be_listening }
-    its(:processes) { should include 'syslog' }
+    its(:protocols) { should include 'tcp' }
   end
-
 
   describe file('/var/www/default/public_html/index.php') do
     it { should_not exist }

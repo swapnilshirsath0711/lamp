@@ -7,7 +7,7 @@
 # require 'spec_helper'
 require 'rspec'
 
-describe Lamp::Default do
+describe lamp::default do
   context 'When all attributes are default, on an unspecified platform' do
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new

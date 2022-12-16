@@ -4,7 +4,8 @@
 #
 # Copyright (c) 2022 The Authors, All Rights Reserved.
 
-# require 'spec_helper'
+require 'chefspec'
+require 'spec_helper'
 require 'rspec'
 
 describe 'lamp::default' do

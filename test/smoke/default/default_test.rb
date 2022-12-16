@@ -21,6 +21,12 @@ require 'serverspec'
     its(:protocols) { should include 'tcp' }
   end
 
+  describe file('/var/www/html/index.html') do
+    it { should exist }
+    it { should be_owned_by 'root' }
+    its(:content) {should match '<<h2>This page is hosted on HTTPD(Apache) server. System has the following configurations:</h2><br>' }
+  end
+
   describe file('/var/www/default/public_html/index.php') do
     it { should_not exist }
     # it { should be_owned_by 'root' }

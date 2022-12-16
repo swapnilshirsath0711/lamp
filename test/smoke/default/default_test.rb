@@ -12,11 +12,12 @@ require 'serverspec'
   end
   
   describe port(80) do
-    it {should be_listening}
+    it { should be_listening.on('0.0.0.0').with('tcp' }
+    its(:protocols) { should include 'tcp' }
+
   end
 
   describe port(80) do
-    its(:protocols) { should include 'tcp' }
   end
 
   describe file('/var/www/default/public_html/index.php') do

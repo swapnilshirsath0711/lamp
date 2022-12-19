@@ -61,7 +61,7 @@ end
 node['lamp']['servers'].each do |host, port_data|
   root_directory = "/var/www/swapnil/#{host}"
   
-  directory "/etc/httpd/swapnil/conf.d/#{host}.conf" do
+  directory "/etc/httpd/swapnil/conf.d/#{host}.conf".each do
   recursive true
   end
 

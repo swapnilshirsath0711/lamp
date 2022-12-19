@@ -60,9 +60,12 @@ end
 # -----------------------------------------------------------------------------------------
 node['lamp']['servers'].each do |host, port_data|
   root_directory = "/var/www/swapnil/#{host}"
-  template "/etc/httpd/swapnil/conf.d/#{host}.conf" do
-    recursive true
+  
+  directory "/etc/httpd/swapnil/conf.d/#{host}.conf" do
+  recursive true
+  end
 
+  template "/etc/httpd/swapnil/conf.d/#{host}.conf" do
     source "default.conf.erb"
     mode "0644"
     variables(

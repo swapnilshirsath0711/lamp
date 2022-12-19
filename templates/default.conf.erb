@@ -1,29 +1,57 @@
-Listen 80
-<VirtualHost *:80>
-  DocumentRoot <%= node['lamp']['setup']['document_root'] %>
+# Listen 80
+# <VirtualHost *:80>
+#   DocumentRoot <%= node['lamp']['setup']['document_root'] %>
   
-  ServerName <%= node['hostname'] %>
-  ServerAdmin 'swapnil.shirsath@coupa.com'
+#   ServerName <%= node['hostname'] %>
+#   ServerAdmin 'swapnil.shirsath@coupa.com'
 
-  <Directory "/">
-          Options FollowSymLinks
-          AllowOverride None
-  </Directory>
-  <Directory <%= node['lamp']['setup']['document_root'] %> >
-          Options Indexes FollowSymLinks MultiViews
-          AllowOverride None
-          Require all granted
-  </Directory>
+#   <Directory "/">
+#           Options FollowSymLinks
+#           AllowOverride None
+#   </Directory>
+#   <Directory <%= node['lamp']['setup']['document_root'] %> >
+#           Options Indexes FollowSymLinks MultiViews
+#           AllowOverride None
+#           Require all granted
+#   </Directory>
 
-  ErrorLog /var/log/apache2/error.log
+#   ErrorLog /var/log/apache2/error.log
 
-  LogLevel warn
+#   LogLevel warn
 
-  CustomLog /var/log/apache2/access.log combined
-  ServerSignature Off
+#   CustomLog /var/log/apache2/access.log combined
+#   ServerSignature Off
 
-  AddType application/x-httpd-php .php
-  AddType application/x-httpd-php-source .phps
-  DirectoryIndex index.php index.html
+#   AddType application/x-httpd-php .php
+#   AddType application/x-httpd-php-source .phps
+#   DirectoryIndex index.php index.html
+# </VirtualHost>
+
+# -----------------------------
+<% if @port != 80 -%>
+  Listen <%= @port %>
+<% end -%>
+<VirtualHost *:<%= @port %>>
+    ServerAdmin webmaster@localhost
+    ServerName <%=@site%>.ec2-18-212-242-215.compute-1.amazonaws.com
+  DocumentRoot <%= @root_directory %>
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+  <Directory <%= @root_directory %>>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride None
+        Order allow,deny
+        allow from all
+    </Directory>
+DocumentRoot /var/www/swapnil/<%=@site%>
 </VirtualHost>
+<IfModule dir_module>
+    DirectoryIndex index.html
+</IfModule>
+# DirectoryIndex index.html index.cgi index.pl index.php index.xhtml
+DocumentRoot "/var/www/swapnil/<%=@site%>"
+User apache
+Group apache
 

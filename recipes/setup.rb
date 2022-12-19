@@ -57,6 +57,39 @@ package 'php-mysql' do
   notifies :restart, 'service[httpd]'
 end
 
+# -----------------------------------------------------------------------------------------
+node['lamp']['servers'].each do |host, port_data|
+  root_directory = "/var/www/swapnil/#{host}"
+  template "/etc/httpd/swapnil/conf.d/#{host}.conf" do
+    source "default.conf.erb"
+    mode "0644"
+    variables(
+      :root_directory => root_directory,
+      :port => port_data["port"],
+      :host => host
+    )
+    notifies :restart, "service[httpd]"
+    end
+  directory root_directory do 
+    mode "0755"
+    recursive true
+  end
+
+  template "#{root_directory}/index.html" do
+    source "app.html.erb"
+    mode "0755"
+    variables(
+      # :host => host1,
+      :host => host,
+      :port => port_data["port"]
+    )
+  
+  end
+end
+
+
+# -----------------------------------------------------------------------------------------
+
 # # commenting all above code and using directory resource
 # # setting up httpd configuration. directory "document_root" has html page (index.html) and configuration files for httpd
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Onboarding Assignment - <%=@site%></h1>
+<?php
+$servername = "localhost";
+$username ="root";
+$password = "Root@2022";
+$dbname = "demoDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, name, deptName FROM sampleDB";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+  echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["deptName"] " from " <%=@site%>. "<br>";
+  }i
+} else {
+echo " results from <%=@site%> site - No database table data";
+}
+$conn->close();
+?>
+</body>
+</html>

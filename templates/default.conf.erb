@@ -33,7 +33,7 @@
 <% end -%>
 <VirtualHost *:<%= @port %>>
     ServerAdmin webmaster@localhost
-    ServerName <%=@site%>.ec2-18-212-242-215.compute-1.amazonaws.com
+    ServerName <%=@host%>.ec2-18-212-242-215.compute-1.amazonaws.com
   DocumentRoot <%= @root_directory %>
     <Directory />
         Options FollowSymLinks
@@ -45,13 +45,38 @@
         Order allow,deny
         allow from all
     </Directory>
-DocumentRoot /var/www/swapnil/<%=@site%>
+DocumentRoot /var/www/swapnil/<%=@host%>
 </VirtualHost>
 <IfModule dir_module>
     DirectoryIndex index.html
 </IfModule>
 # DirectoryIndex index.html index.cgi index.pl index.php index.xhtml
-DocumentRoot "/var/www/swapnil/<%=@site%>"
+DocumentRoot "/var/www/swapnil/<%=@host%>"
 User apache
 Group apache
 
+# ---------------------
+Listen 3001
+<VirtualHost *:3001>
+    ServerAdmin webmaster@localhost
+    ServerName .ec2-18-212-242-215.compute-1.amazonaws.com
+  DocumentRoot /var/www/swapnil/host1
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+  <Directory /var/www/swapnil/host1>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride None
+        Order allow,deny
+        allow from all
+    </Directory>
+DocumentRoot /var/www/swapnil/
+</VirtualHost>
+<IfModule dir_module>
+    DirectoryIndex index.html
+</IfModule>
+# DirectoryIndex index.html index.cgi index.pl index.php index.xhtml
+DocumentRoot "/var/www/swapnil/"
+User apache
+Group apache

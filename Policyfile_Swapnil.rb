@@ -16,6 +16,10 @@ run_list 'lamp::default'
 # Specify a custom source for a single cookbook:
 cookbook 'lamp', '~> 0.1.0', git: 'git@github.com:swapnilshirsath0711/lamp.git', branch: 'main'
 
+cookbook 'mysql', '~> 8.0'
+cookbook 'database', '~> 6.1'
+cookbook 'mysql2_chef_gem', '~> 2.0'
+
 metadata
     depends 'mysql', '~> 8.0'
     depends 'database', '~> 6.1'

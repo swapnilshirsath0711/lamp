@@ -14,7 +14,6 @@ run_list 'lamp::default'
 # named_run_list 'setup_build_server', 'lamp::setup_build_server'
 
 # Specify a custom source for a single cookbook:
-cookbook 'lamp', '~> 1.0.0', git: 'git@github.com:swapnilshirsath0711/lamp.git', branch: 'main'
 
 
 # if current version of chef does not support Berkshelf, we need to add dependencies here
@@ -23,11 +22,13 @@ cookbook 'lamp', '~> 1.0.0', git: 'git@github.com:swapnilshirsath0711/lamp.git',
 # cookbook 'mysql2_chef_gem', '~> 2.0'
 
 metadata
+depends 'httpd', '~> 0.4'
 depends 'mysql', '~> 8.0'
 depends 'database', '~> 6.1'
 depends 'mysql2_chef_gem', '~> 2.0'
 end
 
+cookbook 'lamp', '~> 1.0.0', git: 'git@github.com:swapnilshirsath0711/lamp.git', branch: 'main'
 # group :database do
 #     cookbook 'mysql', '~> 8.0'
 # end

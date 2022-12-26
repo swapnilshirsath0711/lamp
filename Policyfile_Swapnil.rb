@@ -25,3 +25,7 @@ metadata
     depends 'database', '~> 6.1'
     depends 'mysql2_chef_gem', '~> 2.0'
 end
+
+group :database do
+    cookbook 'mysql', '~> 8.0'
+end

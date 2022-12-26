@@ -4,7 +4,7 @@ maintainer_email 'swapnil.shirsath@coupa.com'
 license 'All Rights Reserved'
 description 'Installs/Configures lamp'
 long_description 'Installs/Configures lamp'
-version '0.1.0'
+version '1.0.0'
 
 # depends 'httpd', '~> 0.4'
 depends 'mysql', '~> 8.0'

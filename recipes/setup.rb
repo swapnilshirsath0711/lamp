@@ -41,7 +41,7 @@
     variables ({ipaddress: node['ipaddress']})
   end
   
-  service 'httpd' do
+  httpd_service 'app1' do
     listen_ports ['80']
     action [:start, :enable]
   end

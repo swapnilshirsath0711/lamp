@@ -20,6 +20,20 @@
   #   "
   # end 
   
+    web_app 'app1' do
+        server_name 'app1.example.com'
+        server_aliases ['www.app1.example.com']
+        docroot '/srv/app1/public'
+    end
+    
+# ------code 2 ------
+    # Set up the second application 
+    web_app 'app2' do
+        server_name 'app2.example.com'
+        server_aliases ['www.app2.example.com']
+        docroot '/srv/app2/public'
+    end
+
   # Using template resource instead of file resource to generate dynamic content
 
   template node['lamp']['index_path'] do

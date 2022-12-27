@@ -1,8 +1,8 @@
 %w(
   httpd
-  php56
-  mysql55-server
-  php56-mysqlnd
+  php
+  mysql-server
+  php-mysqlnd
   expect
 ).each do |pkg|
   package pkg do

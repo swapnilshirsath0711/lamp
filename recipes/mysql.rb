@@ -35,7 +35,7 @@ end
 
 ruby_block 'set install_sql' do
   block do
-    node.set['lamp']['mysql']['install_sql'] = false
+    node['lamp']['mysql']['install_sql'] = false
     node.save
   end
   action :run

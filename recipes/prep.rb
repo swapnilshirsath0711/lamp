@@ -6,10 +6,10 @@
   expect
 ).each do |pkg|
   package pkg do
-    action :install
+    action :remove
   end
 end
 
 group 'www' do
-  action :create
+  action :delete
 end

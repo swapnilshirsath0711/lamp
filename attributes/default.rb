@@ -11,3 +11,4 @@ default['lamp']['database']['dbname'] = 'default'
 default['lamp']['database']['admin_username'] = 'dbadmin'
 default['lamp']['database']['root_password'] = 'Myrootpass@123'
 default['lamp']['database']['admin_password'] = 'Myrootpass@123'
+default['lamp']['mysql']['install_sql'] = true

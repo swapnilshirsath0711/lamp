@@ -1,5 +1,5 @@
 %w(
-  httpd24
+  httpd
   php56
   mysql55-server
   php56-mysqlnd

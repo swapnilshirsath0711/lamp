@@ -11,5 +11,5 @@
 end
 
 group 'www' do
-  action :delete
+  action :remove
 end

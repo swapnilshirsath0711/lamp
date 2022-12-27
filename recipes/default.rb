@@ -8,8 +8,8 @@
 # include_recipe 'lamp::setup'
 # include_recipe 'lamp::database'
 include_recipe 'lamp::prep'
-# include_recipe 'lamp::httpd'
-# include_recipe 'lamp::mysql'
+include_recipe 'lamp::httpd'
+include_recipe 'lamp::mysql'
 
 # create_tables = ::File.join(Chef::Config[:file_cache_path], 'create-table.sql')
 

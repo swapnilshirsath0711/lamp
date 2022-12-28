@@ -24,8 +24,13 @@ template node['lamp']['index_path'] do
 end
 
 service 'httpd' do
-  listen_ports ['80']
+  # listen_ports ['80']
   action [:start, :enable]
+end
+
+selinux_port '80' do
+  protocol 'tcp'
+  secontext 'http_port_t'
 end
 
 package 'mysql-server' do

@@ -6,7 +6,7 @@ description 'Installs/Configures lamp'
 long_description 'Installs/Configures lamp'
 version '1.0.0'
 
-supports 'amazon'
+# supports 'amazon'
 
 # depends 'httpd', '~> 0.4'
 # depends 'mysql', '~> 8.0'

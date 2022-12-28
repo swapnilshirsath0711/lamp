@@ -6,32 +6,9 @@
 # A name that describes what the system you're building with Chef does.
 name 'Policyfile_Swapnil'
 
-# Where to find external cookbooks:
 default_source :supermarket
 
-# metadata
-
-# run_list: chef-client will run these recipes in the order specified.
 run_list 'lamp::default'
-# named_run_list 'setup_build_server', 'lamp::setup_build_server'
-
 
 cookbook 'lamp', '~> 1.0.0', git: 'git@github.com:swapnilshirsath0711/lamp.git', branch: 'main'
-include_policy 'mysql', source: :supermarket
 
-# Specify a custom source for a single cookbook:
-
-# if current version of chef does not support Berkshelf, we need to add dependencies here
-# cookbook 'database', '~> 6.1'
-# cookbook 'mysql2_chef_gem', '~> 2.0'
-
-# cookbook 'httpd', '~> 0.4', :supermarket
-# cookbook 'mysql', '~> 8.0', :supermarket
-# cookbook 'database', '~> 6.1', :supermarket
-# cookbook 'mysql2_chef_gem', '~> 2.0', :supermarket
-# # end
-
-# cookbook 'selinux_policy', '~> 3.0.0', :supermarket
-# group :database do
-#     cookbook 'mysql', '~> 8.0'
-# end

@@ -28,6 +28,7 @@ depends 'database', '~> 6.1'
 depends 'mysql2_chef_gem', '~> 2.0'
 end
 
+cookbook 'selinux_policy', '~> 3.0.0', :supermarket
 cookbook 'lamp', '~> 1.0.0', git: 'git@github.com:swapnilshirsath0711/lamp.git', branch: 'main'
 # group :database do
 #     cookbook 'mysql', '~> 8.0'

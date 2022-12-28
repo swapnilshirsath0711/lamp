@@ -9,7 +9,7 @@ name 'Policyfile_Swapnil'
 # Where to find external cookbooks:
 default_source :supermarket
 
-metadata
+# metadata
 
 # run_list: chef-client will run these recipes in the order specified.
 run_list 'lamp::default'

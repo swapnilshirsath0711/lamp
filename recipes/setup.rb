@@ -85,7 +85,3 @@ package 'php-mysql' do
   action :install
   notifies :restart, 'service[httpd]'
 end
-
-service 'mysql_client' do
-  action :create
-end

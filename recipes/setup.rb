@@ -32,18 +32,6 @@ package 'mysql-server' do
   action :install
 end
 
-service 'mysqld' do
-  action [:start, :enable]
-end
-
-package 'php' do
-  action :install
-end
-
-package 'php-mysql' do
-  action :install
-  notifies :restart, 'service[httpd]'
-end
 
 # -----------------------------------------------------------------------------------------
 node['lamp']['servers'].each do |host, port_data|
@@ -80,3 +68,15 @@ node['lamp']['servers'].each do |host, port_data|
   end
 end
 
+service 'mysqld' do
+  action [:start, :enable]
+end
+
+package 'php' do
+  action :install
+end
+
+package 'php-mysql' do
+  action :install
+  notifies :restart, 'service[httpd]'
+end

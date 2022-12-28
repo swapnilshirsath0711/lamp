@@ -21,12 +21,12 @@ run_list 'lamp::default'
 # cookbook 'database', '~> 6.1'
 # cookbook 'mysql2_chef_gem', '~> 2.0'
 
-metadata
-depends 'httpd', '~> 0.4'
-depends 'mysql', '~> 8.0'
-depends 'database', '~> 6.1'
-depends 'mysql2_chef_gem', '~> 2.0'
-end
+# metadata
+cookbook 'httpd', '~> 0.4', :supermarket
+cookbook 'mysql', '~> 8.0', :supermarket
+cookbook 'database', '~> 6.1', :supermarket
+cookbook 'mysql2_chef_gem', '~> 2.0', :supermarket
+# end
 
 cookbook 'selinux_policy', '~> 3.0.0', :supermarket
 cookbook 'lamp', '~> 1.0.0', git: 'git@github.com:swapnilshirsath0711/lamp.git', branch: 'main'

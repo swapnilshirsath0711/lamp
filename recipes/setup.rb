@@ -28,10 +28,10 @@ service 'httpd' do
   action [:start, :enable]
 end
 
-selinux_port '80' do
-  protocol 'tcp'
-  secontext 'http_port_t'
-end
+# selinux_port '80' do
+#   protocol 'tcp'
+#   secontext 'http_port_t'
+# end
 
 package 'mysql-server' do
   action :install

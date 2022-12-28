@@ -23,7 +23,7 @@ template node['lamp']['index_path'] do
   variables ({ipaddress: node['ipaddress']})
 end
 
-httpd_service 'app1' do
+service 'httpd' do
   listen_ports ['80']
   action [:start, :enable]
 end

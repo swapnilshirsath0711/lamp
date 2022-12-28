@@ -15,7 +15,7 @@ default_source :supermarket
 run_list 'lamp::default'
 # named_run_list 'setup_build_server', 'lamp::setup_build_server'
 
-include_policy 'mysql', '~> 8.0.0'
+include_policy 'mysql', source: :supermarket
 
 cookbook 'lamp', '~> 1.0.0', git: 'git@github.com:swapnilshirsath0711/lamp.git', branch: 'main'
 

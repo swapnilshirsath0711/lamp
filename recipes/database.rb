@@ -4,6 +4,7 @@
 #
 # Copyright:: 2022, The Authors, All Rights Reserved.
 
+# This recipe will setup mysql configuration such as user, password, database name etc. (Installation part is already done in other recipe) 
 mysql_client 'default' do
     action :create
 end

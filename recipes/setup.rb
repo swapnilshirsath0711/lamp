@@ -19,7 +19,7 @@ package 'mysql-server' do
   action :install
 end
 
-service 'mysqld' do
+service 'mysql' do
   action [:start, :enable]
 end
 

@@ -6,6 +6,14 @@ package 'httpd' do
 	action :install
 end
 
+package 'mysql-server' do
+  action :install
+end
+
+package 'php' do
+  action :install
+end
+
 template node['lamp']['index_path'] do
   source 'index.erb'
   variables ({ipaddress: node['ipaddress']})
@@ -15,16 +23,8 @@ service 'httpd' do
   action [:start, :enable]
 end
 
-package 'mysql-server' do
-  action :install
-end
-
-service 'mysql' do
+service 'mysqld' do
   action [:start, :enable]
-end
-
-package 'php' do
-  action :install
 end
 
 package 'php-mysql' do
